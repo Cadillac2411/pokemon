@@ -130,33 +130,3 @@
     font-family: "Times New Roman", Times, serif;
   }
 </style>
-
-<!-- Las directivas de Vue son atributos especiales con el prefijo v- que puedes agregar a cualquier elemento HTML en tus plantillas de Vue. Estas directivas te permiten realizar tareas dinámicas directamente en el DOM, como manipular el texto, enlazar datos, manejar eventos y realizar muchas otras acciones que serían más complejas de hacer con JavaScript puro.
-
-Aquí hay algunas de las directivas más comunes y su uso:
-
-v-model: Crea un enlace bidireccional en formularios o componentes, permitiendo que el estado de la aplicación y los campos de entrada estén sincronizados.
-v-for: Utilizado para renderizar una lista de elementos basándose en los datos de un arreglo.
-v-if, v-else-if, v-else: Directivas condicionales que sirven para incluir o excluir elementos del DOM basándose en alguna condición.
-v-show: Similar a v-if, pero en lugar de eliminar elementos, simplemente alterna su visibilidad con CSS.
-v-bind: Enlaza atributos HTML a expresiones de Vue. Por ejemplo, puedes enlazar el atributo href de un enlace a una variable en tu instancia de Vue.
-v-on: Escucha eventos del DOM y ejecuta JavaScript cuando estos ocurren. Es útil para manejar eventos como clics, entradas de teclado, etc.
-Cada directiva puede tener argumentos y modificadores que alteran su comportamiento. Por ejemplo, v-on:click.prevent escuchará el evento de clic y llamará a event.preventDefault() automáticamente.
-
-Las directivas son una parte fundamental de Vue que facilita la creación de interfaces de usuario reactivas y dinámicas -->
-
-<!-- Axios es un cliente HTTP basado en promesas para Node.js y el navegador. Es isomórfico, lo que significa que puede ejecutarse tanto en el navegador como en Node.js con la misma base de código. En el lado del servidor, utiliza el módulo http nativo de Node.js, mientras que en el cliente (navegador) utiliza XMLHttpRequests.
-
-Algunas características de Axios incluyen:
-
-Realizar solicitudes XMLHttpRequests desde el navegador.
-Realizar solicitudes HTTP desde Node.js.
-Soportar la API de promesas.
-Interceptar peticiones y respuestas.
-Transformar datos de peticiones y respuestas.
-Cancelar peticiones.
-Configurar tiempos de espera (timeouts).
-Serializar parámetros de consulta.
-Automatizar la serialización del cuerpo de la solicitud a JSON, formularios multipartes y URL codificadas.
-Manejar automáticamente los datos JSON en la respuesta.
-Axios es ampliamente utilizado debido a su interfaz fácil de usar y su capacidad para manejar peticiones y respuestas de manera eficiente -->
