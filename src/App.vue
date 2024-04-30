@@ -31,8 +31,8 @@
             filteredPokemons() {
                 return this.pokemons.filter(
                     (pokemon) =>
-                        pokemon.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-                        pokemon.id.toString().includes(this.searchTerm)
+                        pokemon.id === parseInt(this.searchTerm) ||
+                        pokemon.name.toLowerCase().includes(this.searchTerm.toLowerCase())
                 );
             },
         },
@@ -86,7 +86,8 @@
         border: 2px solid #ffcb05;
         padding: 20px;
         margin: 10px;
-        width: 200px;
+        width: 400px;
+        height: 350px;
         border-radius: 10px;
         color: #000;
     }
@@ -97,6 +98,9 @@
     }
     img {
         background-color: #000;
+        width: 200px;
+        height: 150px;
+
     }
 
     .titulo {
