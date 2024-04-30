@@ -33,14 +33,10 @@
     },
     computed: {
       filteredPokemons() {
-        return this.pokemons.filter(
-          (pokemon) =>
-            pokemon.name
-              .toLowerCase()
-              .includes(this.searchTerm.toLowerCase()) ||
-            pokemon.id.toString().includes(this.searchTerm)
-        );
-      },
+        return this.pokemons.filter(pokemon =>
+        pokemon.id === parseInt(this.searchTerm)||
+        pokemon.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+      )},
     },
     created() {
       this.fetchAllPokemons();
