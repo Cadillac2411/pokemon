@@ -50,13 +50,16 @@
     /* Agregar sombreado al borde */
     box-shadow: 0 3px 10px rgba(0, 0, 1, 1);
   }
+
   .imagen {
-    background-color: #000;
     border-radius: 10px;
   }
+
   img {
-    background-color: #000;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC7zBdc82XiS1wIVmKLgjC9JrbaFZomzP2Iiapce6_5g&s');
+    border-radius:30px;
   }
+
   .nombre {
     color: #ffcb05;
     text-shadow: -1px -1px 0 #007acc, 1px -1px 0 #007acc, -1px 1px 0 #007acc, 1px 1px 0 #007acc;
