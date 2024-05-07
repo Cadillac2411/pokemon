@@ -1,8 +1,9 @@
+
 <template>
   <div class="pokemon-layout">
     <div v-for="pokemon in filteredPokemons" :key="pokemon.name" class="pokemon-card">
       <div class="imagen">
-        <img :src="pokemon.img" :alt="`Imagen de ${pokemon.name}`" />
+        <PokemonCarousel :imagenesPokemons="pokemon.imagenesPokemons" />
       </div>
       <h3 class="nombre">{{ pokemon.name }}</h3>
       <p><b class="id">ID:</b> {{ pokemon.id }}</p>
@@ -13,11 +14,12 @@
 </template>
 
 <script>
-
-import PokemonStats from './PokemonStats.vue';
+import PokemonCarousel from '/src/components/PokemonCarousel.vue';
+import PokemonStats from '/src/components/PokemonStats.vue';
   export default {
     components: {
       PokemonStats,
+      PokemonCarousel,
     },
     props: {
       pokemons: {
