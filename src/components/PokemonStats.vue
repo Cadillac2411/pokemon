@@ -1,7 +1,14 @@
 <template>
   <v-dialog max-width="500">
     <template v-slot:activator="{ props: activatorProps }">
-      <v-btn class="boton" v-bind="activatorProps" color="#ffcd0568" border-color="yellow" text="Estadísticas" variant="flat"></v-btn>
+      <v-btn
+        class="boton"
+        v-bind="activatorProps"
+        color="#ffcd0568"
+        border-color="yellow"
+        text="Estadísticas"
+        variant="flat"
+        large></v-btn>
     </template>
 
     <template v-slot:default="{ isActive }">
@@ -24,22 +31,24 @@
 </template>
 
 <script>
-export default {
-  props: {
-    pokemon: {
-      type: Object,
-      required: true,
+  export default {
+    props: {
+      pokemon: {
+        type: Object,
+        required: true,
+      },
     },
-  },
-};
+  };
 </script>
 
 <style>
-.boton {
-  color: yellow;
-  background-color: white;
-}
-.textoEstadisticas {
-  font-family: 'Times New Roman', Times, serif;
-}
+  .boton {
+    color: yellow;
+    background-color: white;
+    border-radius: 2px;
+  }
+  .textoEstadisticas {
+    font-family: 'Times New Roman', Times, serif;
+  }
+
 </style>

@@ -93,6 +93,6 @@
     color: #ffcb05;
     text-shadow: -1px -1px 0 #007acc, 1px -1px 0 #007acc, -1px 1px 0 #007acc, 1px 1px 0 #007acc;
     text-align: center;
-    font-size: 50px;
+    font-size: 80px;
   }
 </style>
