@@ -16,36 +16,40 @@
         <v-card-text class="textoEstadisticas">
           <ul class="lista">
             <li>
-              <p class="estadisticaTexto">
-                <img
-                  class="iconoEstadistica"
-                  src="https://static.vecteezy.com/system/resources/previews/002/513/330/non_2x/red-heart-pixel-art-vector.jpg"
-                  alt="" /><strong>Salud:</strong> {{ pokemon.salud }}
-              </p>
+              <img
+                class="iconoEstadistica"
+                src="https://static.vecteezy.com/system/resources/previews/002/513/330/non_2x/red-heart-pixel-art-vector.jpg"
+                alt="" />
+            </li>
+            <li>
+              <p class="estadisticaTexto"><strong>Salud:</strong> {{ pokemon.salud }}</p>
+            </li>
+            <li>
+              <img
+                class="iconoEstadistica"
+                src="https://img.freepik.com/vector-premium/elemento-juego-sword-pixel-art-espada-pixeles-juego_158677-574.jpg?w=2000"
+                alt="" />
             </li>
             <li class="ajusteLista">
-              <p class="estadisticaTexto">
-                <img
-                  class="iconoEstadistica"
-                  src="https://img.freepik.com/vector-premium/elemento-juego-sword-pixel-art-espada-pixeles-juego_158677-574.jpg?w=2000"
-                  alt="" /><strong>Ataque:</strong> {{ pokemon.ataque }}
-              </p>
+              <p class="estadisticaTexto"><strong>Ataque:</strong> {{ pokemon.ataque }}</p>
+            </li>
+            <li>
+              <img
+                class="iconoEstadistica"
+                src="https://th.bing.com/th/id/OIP.RpRHxFg1xGutPwZNeM_qMAHaHa?rs=1&pid=ImgDetMain"
+                alt="" />
             </li>
             <li class="ajusteLista">
-              <p class="estadisticaTexto">
-                <img
-                  class="iconoEstadistica"
-                  src="https://th.bing.com/th/id/OIP.RpRHxFg1xGutPwZNeM_qMAHaHa?rs=1&pid=ImgDetMain"
-                  alt="" /><strong>Defensa:</strong> {{ pokemon.defensa }}
-              </p>
+              <p class="estadisticaTexto"><strong>Defensa:</strong> {{ pokemon.defensa }}</p>
+            </li>
+            <li>
+              <img
+                class="iconoEstadistica"
+                src="https://static.vecteezy.com/system/resources/previews/010/826/102/original/lightning-pixel-art-free-vector.jpg"
+                alt="" />
             </li>
             <li class="ajusteLista">
-              <p class="estadisticaTexto">
-                <img
-                  class="iconoEstadistica"
-                  src="https://static.vecteezy.com/system/resources/previews/010/826/102/original/lightning-pixel-art-free-vector.jpg"
-                  alt="" /><strong>Velocidad:</strong> {{ pokemon.velocidad }}
-              </p>
+              <p class="estadisticaTexto"><strong>Velocidad:</strong> {{ pokemon.velocidad }}</p>
             </li>
           </ul>
 
@@ -87,7 +91,7 @@
 
   .estadisticaTexto {
     font-size: 30px;
-    margin-left: 2.5rem;
+    margin-left: .5rem;
   }
 
   v-card .title {
@@ -97,6 +101,8 @@
   .iconoEstadistica {
     height: 35px;
     width: 40px;
+    margin-top: 5px;
+    margin-left: 2rem;
   }
 
   .lista {
@@ -106,6 +112,4 @@
   li {
     list-style: none;
   }
-
-
 </style>
