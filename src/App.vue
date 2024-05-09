@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h1 class="titulo">Pokémon</h1>
-  </div>
-
-  <div>
-    <PokemonFilter @update-search-term="handleUpdateSearchTerm" />
+    <ul>
+      <li class="iconoFormato"><img class="icono" src="https://i.etsystatic.com/33357979/r/il/e1dfcd/3584257734/il_fullxfull.3584257734_bfy9.jpg" alt="pokebola"></li>
+      <li class="titulo"><h1 >Pokémon</h1></li>
+      <li class="filtro"><PokemonFilter @update-search-term="handleUpdateSearchTerm" /></li>
+    </ul>
   </div>
 
   <div>
@@ -67,11 +67,11 @@
                 defensa: pokemonResponse.data.stats[2].base_stat,
                 velocidad: pokemonResponse.data.stats[5].base_stat,
                 imagenesPokemons: [
-                pokemonResponse.data.sprites.front_default,
-                pokemonResponse.data.sprites.back_default,
-                pokemonResponse.data.sprites.back_shiny,
-                pokemonResponse.data.sprites.front_shiny,
-                ]
+                  pokemonResponse.data.sprites.front_default,
+                  pokemonResponse.data.sprites.back_default,
+                  pokemonResponse.data.sprites.back_shiny,
+                  pokemonResponse.data.sprites.front_shiny,
+                ],
               });
             })
           );
@@ -89,10 +89,33 @@
 </script>
 
 <style>
+ul{
+  display: flex;
+}
+.icono{
+  height: 100px;
+  width: 100px;
+  background-color: aliceblue;
+}
+
+.iconoFormato{
+  margin-left: 3rem;
+  list-style: none;
+  margin-top: .5rem;
+}
   .titulo {
     color: #ffcb05;
     text-shadow: -1px -1px 0 #007acc, 1px -1px 0 #007acc, -1px 1px 0 #007acc, 1px 1px 0 #007acc;
     text-align: center;
-    font-size: 80px;
+    font-size: 40px;
+    margin-left: 1rem;
+    list-style: none;
+  }
+
+  .filtro{
+    font-size: 40px;
+    margin-left: 14.8rem;
+    list-style: none;
+    margin-top: 1rem;
   }
 </style>

@@ -5,28 +5,17 @@
         <PokemonCarousel :imagenesPokemons="pokemon.imagenesPokemons" />
       </div>
       <h3 class="nombre">{{ pokemon.name }}</h3>
-      <p><b class="id">ID:</b> {{ pokemon.id }}</p>
-      <p><b class="tipo">Tipo: </b>{{ pokemon.types.join(', ') }}</p>
+      <p class="id"><b>ID:</b> {{ pokemon.id }}</p>
+      <p class="tipo"><b>Tipo: </b>{{ pokemon.types.join(', ') }}</p>
       <PokemonStats :pokemon="pokemon" />
     </div>
   </div>
   <div>
-          <!-- Componente de Paginación -->
-    <v-pagination
-      v-model="currentPage"
-      :length="totalPages"
-      next-icon="mdi-chevron-right"
-      prev-icon="mdi-chevron-left"
-    >
-      <!-- Mostrar la página actual y el total de páginas -->
-      <template v-slot:prev-label>
-        {{ currentPage }} / {{ totalPages }}
-      </template>
-      <template v-slot:next-label>
-        {{ currentPage }} / {{ totalPages }}
-      </template>
+    <v-pagination v-model="currentPage" :length="totalPages" next-icon="mdi-chevron-right" prev-icon="mdi-chevron-left" class="custom-pagination">
+      <template v-slot:prev-label> {{ currentPage }} / {{ totalPages }} </template>
+      <template v-slot:next-label> {{ currentPage }} / {{ totalPages }} </template>
     </v-pagination>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -73,16 +62,16 @@
     justify-content: space-around;
   }
   .pokemon-card {
-    border: 2px solid #ffcb05;
+    border: 4px solid #ffcb05;
     padding: 20px;
     margin: 10px;
     width: 370px;
-    height: 500px;
+    height: 520px;
     border-radius: 10px;
     color: #000;
     text-align: center;
     /* Agregar sombreado al borde */
-    box-shadow: 0 3px 10px rgba(0, 0, 1, 1);
+    box-shadow: 0 3px 15px rgba(0, 0, 1, 1);
   }
 
   .imagen {
@@ -98,6 +87,19 @@
   .nombre {
     color: #ffcb05;
     text-shadow: -1px -1px 0 #007acc, 1px -1px 0 #007acc, -1px 1px 0 #007acc, 1px 1px 0 #007acc;
-    font-size: 24px;
+    font-size: 34px;
   }
+
+  .id {
+    font-size: 20px;
+  }
+
+  .tipo {
+    font-size: 20px;
+    padding-bottom: 9px;
+  }
+
+  .custom-pagination .v-pagination__item {
+  color: #af8c00; /* Cambia el color a amarillo */
+}
 </style>

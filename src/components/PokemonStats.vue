@@ -1,5 +1,5 @@
 <template>
-  <v-dialog max-width="500">
+  <v-dialog max-width="800">
     <template v-slot:activator="{ props: activatorProps }">
       <v-btn
         class="boton"
@@ -42,6 +42,10 @@
 </script>
 
 <style>
+
+v-btn{
+  margin-top: 1rem;
+}
   .boton {
     color: yellow;
     background-color: white;
@@ -49,6 +53,7 @@
   }
   .textoEstadisticas {
     font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
   }
 
 </style>
