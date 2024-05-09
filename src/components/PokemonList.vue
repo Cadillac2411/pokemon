@@ -1,6 +1,6 @@
 <template>
   <div class="pokemon-layout">
-    <div v-for="pokemon in filteredPokemons" :key="pokemon.name" class="pokemon-card">
+    <div v-for="pokemon in paginatedPokemons" :key="pokemon.name" class="pokemon-card">
       <div class="imagen">
         <PokemonCarousel :imagenesPokemons="pokemon.imagenesPokemons" />
       </div>
@@ -10,6 +10,23 @@
       <PokemonStats :pokemon="pokemon" />
     </div>
   </div>
+  <div>
+          <!-- Componente de Paginación -->
+    <v-pagination
+      v-model="currentPage"
+      :length="totalPages"
+      next-icon="mdi-chevron-right"
+      prev-icon="mdi-chevron-left"
+    >
+      <!-- Mostrar la página actual y el total de páginas -->
+      <template v-slot:prev-label>
+        {{ currentPage }} / {{ totalPages }}
+      </template>
+      <template v-slot:next-label>
+        {{ currentPage }} / {{ totalPages }}
+      </template>
+    </v-pagination>
+    </div>
 </template>
 
 <script>
@@ -30,6 +47,22 @@
         required: true,
       },
     },
+    data() {
+      return {
+        currentPage: 1, // Página actual
+        itemsPerPage: 10, // Cantidad de Pokémon por página
+      };
+    },
+    computed: {
+      totalPages() {
+        return Math.ceil(this.filteredPokemons.length / this.itemsPerPage);
+      },
+      paginatedPokemons() {
+        const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+        const endIndex = startIndex + this.itemsPerPage;
+        return this.filteredPokemons.slice(startIndex, endIndex);
+      },
+    },
   };
 </script>
 
@@ -43,7 +76,8 @@
     border: 2px solid #ffcb05;
     padding: 20px;
     margin: 10px;
-    width: 200px;
+    width: 370px;
+    height: 500px;
     border-radius: 10px;
     color: #000;
     text-align: center;
@@ -57,7 +91,8 @@
 
   img {
     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC7zBdc82XiS1wIVmKLgjC9JrbaFZomzP2Iiapce6_5g&s');
-    border-radius:30px;
+    background-size: cover;
+    border-radius: 10px;
   }
 
   .nombre {
