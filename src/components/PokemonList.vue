@@ -42,7 +42,7 @@
     data() {
       return {
         currentPage: 1, // Página actual
-        itemsPerPage: 9, // Cantidad de Pokémon por página
+        itemsPerPage: 10, // Cantidad de Pokémon por página
       };
     },
     computed: {
