@@ -1,3 +1,4 @@
+
 <template>
   <div class="filtro">
     <input class="inputFiltro" v-model="searchTerm" @input="updateSearchTerm" placeholder="Buscar por nombre o ID" />
