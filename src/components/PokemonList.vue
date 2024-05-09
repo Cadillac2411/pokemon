@@ -1,26 +1,29 @@
 <template>
-  <div class="pokemon-layout">
-    <div v-for="pokemon in paginatedPokemons" :key="pokemon.name" class="pokemon-card">
-      <div class="imagen">
-        <PokemonCarousel :imagenesPokemons="pokemon.imagenesPokemons" />
-      </div>
-      <h3 class="nombre">{{ pokemon.name }}</h3>
-      <p class="id"><b>ID:</b> {{ pokemon.id }}</p>
-      <p class="tipo"><b>Tipo: </b>{{ pokemon.types.join(', ') }}</p>
-      <PokemonStats :pokemon="pokemon" />
-    </div>
-  </div>
   <div>
-    <v-pagination v-model="currentPage" :length="totalPages" next-icon="mdi-chevron-right" prev-icon="mdi-chevron-left" class="custom-pagination">
-      <template v-slot:prev-label> {{ currentPage }} / {{ totalPages }} </template>
-      <template v-slot:next-label> {{ currentPage }} / {{ totalPages }} </template>
-    </v-pagination>
+    <div class="pokemon-layout">
+      <div v-for="pokemon in paginatedPokemons" :key="pokemon.name" class="pokemon-card">
+        <div class="imagen">
+          <PokemonCarousel :imagenesPokemons="pokemon.imagenesPokemons" />
+        </div>
+        <h3 class="nombre">{{ pokemon.name }}</h3>
+        <p class="id"><b>ID:</b> {{ pokemon.id }}</p>
+        <p class="tipo"><b>Tipo: </b>{{ pokemon.types.join(', ') }}</p>
+        <PokemonStats :pokemon="pokemon" />
+      </div>
+    </div>
+    <div>
+      <v-pagination v-model="currentPage" :length="totalPages" next-icon="mdi-chevron-right" prev-icon="mdi-chevron-left" class="custom-pagination">
+        <template v-slot:prev-label> {{ currentPage }} / {{ totalPages }} </template>
+        <template v-slot:next-label> {{ currentPage }} / {{ totalPages }} </template>
+      </v-pagination>
+    </div>
   </div>
 </template>
 
 <script>
   import PokemonCarousel from '/src/components/PokemonCarousel.vue';
   import PokemonStats from '/src/components/PokemonStats.vue';
+
   export default {
     components: {
       PokemonStats,
@@ -39,7 +42,7 @@
     data() {
       return {
         currentPage: 1, // Página actual
-        itemsPerPage: 10, // Cantidad de Pokémon por página
+        itemsPerPage: 9, // Cantidad de Pokémon por página
       };
     },
     computed: {
@@ -50,6 +53,12 @@
         const startIndex = (this.currentPage - 1) * this.itemsPerPage;
         const endIndex = startIndex + this.itemsPerPage;
         return this.filteredPokemons.slice(startIndex, endIndex);
+      },
+    },
+    watch: {
+      filteredPokemons() {
+        // Reinicia la página actual a 1 cuando los Pokémon filtrados cambian
+        this.currentPage = 1;
       },
     },
   };
