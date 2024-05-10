@@ -1,14 +1,17 @@
 <template>
-  <div>
+  <div class="encabezado">
+    <div>
     <ul>
       <li class="iconoFormato"><img class="icono" src="https://i.etsystatic.com/33357979/r/il/e1dfcd/3584257734/il_fullxfull.3584257734_bfy9.jpg" alt="pokebola"></li>
       <li class="titulo"><h1 >Pokémon</h1></li>
       <li class="filtro"><PokemonFilter @update-search-term="handleUpdateSearchTerm" /></li>
     </ul>
   </div>
-
+  </div>
+  <div class="fondo">
   <div>
     <PokemonList :pokemons="pokemons" :filteredPokemons="pokemonsFilters" />
+  </div>
   </div>
 </template>
 
@@ -89,6 +92,24 @@
 </script>
 
 <style>
+.encabezado{
+  margin-bottom: 50px;
+}
+
+.fondo{
+  background-image: url("/src/img/imagen.png");
+  background-size: auto;
+  background-repeat: repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.fondo >img{
+  opacity: 0.5;
+
+}
 ul{
   display: flex;
 }

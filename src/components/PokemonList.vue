@@ -71,6 +71,7 @@
     justify-content: space-around;
   }
   .pokemon-card {
+    background-color:white;
     border: 4px solid #ffcb05;
     padding: 20px;
     margin: 10px;
