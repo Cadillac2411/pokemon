@@ -77,13 +77,12 @@
 </script>
 
 <style>
-  v-btn {
-    margin-top: 1rem;
-  }
+
   .boton {
     color: yellow;
     background-color: white;
     border-radius: 2px;
+    margin-right: 18px;
   }
   .textoEstadisticas {
     font-family: 'Times New Roman', Times, serif;

@@ -93,10 +93,11 @@
 
 <style>
 .encabezado{
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .fondo{
+  margin-top: -65px;
   background-image: url("/src/img/imagen.png");
   background-size: auto;
   background-repeat: repeat;
@@ -106,10 +107,7 @@
   justify-content: center;
   align-items: center;
 }
-.fondo >img{
-  opacity: 0.5;
 
-}
 ul{
   display: flex;
 }

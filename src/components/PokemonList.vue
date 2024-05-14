@@ -9,10 +9,18 @@
         <p class="id"><b>ID:</b> {{ pokemon.id }}</p>
         <p class="tipo"><b>Tipo: </b>{{ pokemon.types.join(', ') }}</p>
         <PokemonStats :pokemon="pokemon" />
+        <PokemonImg :pokemon="pokemon" />
       </div>
     </div>
     <div>
-      <v-pagination v-model="currentPage" :length="totalPages" next-icon="mdi-chevron-right" prev-icon="mdi-chevron-left" class="custom-pagination">
+      <v-pagination
+        v-model="currentPage"
+        :length="totalPages"
+        rounded="circle"
+        :total-visible="10"
+        next-icon="mdi-chevron-right"
+        prev-icon="mdi-chevron-left"
+        class="custom-pagination">
         <template v-slot:prev-label> {{ currentPage }} / {{ totalPages }} </template>
         <template v-slot:next-label> {{ currentPage }} / {{ totalPages }} </template>
       </v-pagination>
@@ -21,6 +29,7 @@
 </template>
 
 <script>
+  import PokemonImg from './PokemonImg.vue';
   import PokemonCarousel from '/src/components/PokemonCarousel.vue';
   import PokemonStats from '/src/components/PokemonStats.vue';
 
@@ -28,6 +37,7 @@
     components: {
       PokemonStats,
       PokemonCarousel,
+      PokemonImg,
     },
     props: {
       pokemons: {
@@ -71,7 +81,7 @@
     justify-content: space-around;
   }
   .pokemon-card {
-    background-color:white;
+    background-color: white;
     border: 4px solid #ffcb05;
     padding: 20px;
     margin: 10px;
@@ -82,6 +92,7 @@
     text-align: center;
     /* Agregar sombreado al borde */
     box-shadow: 0 3px 15px rgba(0, 0, 1, 1);
+    opacity: 1;
   }
 
   .imagen {
@@ -110,6 +121,6 @@
   }
 
   .custom-pagination .v-pagination__item {
-  color: #af8c00; /* Cambia el color a amarillo */
-}
+    color: #00d1d8;
+  }
 </style>
