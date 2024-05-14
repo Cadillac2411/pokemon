@@ -47,8 +47,9 @@
     border-radius: 2px;
     padding-left: 30px;
     padding-right: 30px;
-    margin-left: 10px;
+    margin-left: 3px;
     text-align: center;
+    margin-bottom: 14px;
   }
 
   v-card .title {

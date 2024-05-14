@@ -82,7 +82,8 @@
     color: yellow;
     background-color: white;
     border-radius: 2px;
-    margin-right: 18px;
+    margin-right: 3px;
+    margin-bottom: 14px;
   }
   .textoEstadisticas {
     font-family: 'Times New Roman', Times, serif;

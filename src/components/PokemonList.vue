@@ -9,6 +9,7 @@
         <p class="id"><b>ID:</b> {{ pokemon.id }}</p>
         <p class="tipo"><b>Tipo: </b>{{ pokemon.types.join(', ') }}</p>
         <PokemonStats :pokemon="pokemon" />
+        <img class="pokeIcon" src="https://th.bing.com/th/id/OIP.Caauk3ptnvXNENEytZ1vXQHaHa?rs=1&pid=ImgDetMain" alt="poke">
         <PokemonImg :pokemon="pokemon" />
       </div>
     </div>
@@ -103,6 +104,13 @@
     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC7zBdc82XiS1wIVmKLgjC9JrbaFZomzP2Iiapce6_5g&s');
     background-size: cover;
     border-radius: 10px;
+  }
+
+  .pokeIcon{
+    height: 25px;
+    width: 25px;
+    margin-top: 7px;
+    
   }
 
   .nombre {
